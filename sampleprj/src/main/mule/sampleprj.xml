@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="5696c7e8-cb2a-4459-b1bb-1b8da47b6803" >
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
+	</http:listener-config>
+	<flow name="sampleprjFlow" doc:id="6c82e57d-126b-47c3-b2d4-38586e1e689f" >
+		<http:listener doc:name="Listener" doc:id="10f58170-a3d1-427c-b7d4-8fbfc440879f" config-ref="HTTP_Listener_config" path="/test"/>
+		<set-payload value="Finished Successfully" doc:name="Set Payload" doc:id="70ab60bc-e1e2-46e2-b02c-59a9f7294495" />
+	</flow>
+</mule>
